@@ -14,10 +14,9 @@ done < "paquetes.txt"
 
 # Procesar cada paquete no array
   for i in ${!paquetes[@]}; do
-    echo "${paquetes[$i]} ${accions[$i]}"
 
 # Comprobar se o paquete está instalado
-  instalado=$(whereis ${paquetes[$i]} | grep bin | wc -l)
+    instalado=$(whereis ${paquetes[$i]} | grep bin | wc -l)
 
     case "${accions[$i]}" in
         "remove" | "r")
